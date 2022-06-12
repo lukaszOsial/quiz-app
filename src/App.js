@@ -40,7 +40,7 @@ function App() {
           </Route>
           <Route 
             path="/result" 
-            element ={<Result />} 
+            element ={<Result name={name} score={score} />} 
             exact>
           </Route>
         </Routes>
