@@ -33,6 +33,9 @@
 .settings-select .category{
     margin-bottom: 30px;
 }
+.settings-select .level{
+    margin-bottom: 30px;
+}
 @media (max-width: 800px) {
     .content{
         flex-direction: column-reverse;
