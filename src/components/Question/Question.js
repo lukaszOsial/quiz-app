@@ -29,19 +29,15 @@ const Question = ({ currentQuestion, setCurrentQuestion, questions, options, cor
     };
 
     const handleNext = () => {
-      if(currentQuestion> 8) {
+      if(currentQuestion > 8 && selected) {
         navigate('/result');
       }else if(selected){
         setCurrentQuestion(currentQuestion + 1);
         setSelected();
       }else{
-        setError("Please select an option first");
+        setError(true);
       }
-    }
-
-    const handleQuit = () => {
-
-    }
+    };
 
   return (
     <div className="question">
@@ -49,7 +45,7 @@ const Question = ({ currentQuestion, setCurrentQuestion, questions, options, cor
         <div className="question-box">
             <h2>{questions[currentQuestion].question}</h2>
             <div className="options">
-              {error && <ErrorMessage></ErrorMessage>}
+              {error && <ErrorMessage>Please select an option first</ErrorMessage>}
               {options && 
               options.map(i => (
               <button onClick={() => {handleCheck(i)}} 
@@ -60,20 +56,19 @@ const Question = ({ currentQuestion, setCurrentQuestion, questions, options, cor
             </div>
             <div className="controls">
                 <Button
+                  className="button-controls"
                   variant="contained"
                   color="secondary"
                   size="large"
-                  style={{width: 190}}
                   href="/"
-                  onClick={handleQuit}
                 >
                   Quit
                 </Button>
                 <Button
+                  className="button-controls"
                   variant="contained"
                   color="primary"
                   size="large"
-                  style={{width: 190}}
                   onClick={handleNext}
                 >
                   Next question

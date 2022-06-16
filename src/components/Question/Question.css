@@ -44,8 +44,22 @@
     width: 100%;
     justify-content: space-around;
 }
+.button-controls{
+    width: 190px;
+    margin: 100px;
+}
 @media (max-width: 620px){
     .single-option{
         width: 100%;
+    }
+}
+@media (max-width: 520px){
+    .button-controls {
+        width: 140px;
+    }
+}
+@media (max-width: 420px){
+    .button-controls {
+        width: 110px;
     }
 }

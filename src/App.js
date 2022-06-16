@@ -25,7 +25,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div className="app" style={{backgroundImage: "url(./images/background.jpg)"}}>
+      <div className="app">
         <Header />
         <Routes>
           <Route 

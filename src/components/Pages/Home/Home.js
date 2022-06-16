@@ -27,12 +27,12 @@ const Home = ({ name, setName, fetchQuestion }) => {
   return (
     <div className='content'>
       <div className='settings'>
-        <span>Ustawienia</span>
+        <span>Settings</span>
         <div className='settings-select'>
-          {error && <ErrorMessage>Proszę wypełnić wszystkie pola</ErrorMessage>}
+          {error && <ErrorMessage>Please fill in all fields</ErrorMessage>}
           <TextField 
             className='name' 
-            label='Podaj imię' 
+            label='Enter username' 
             variant="outlined" 
             onChange={(e) => setName(e.target.value)}
           />
@@ -40,7 +40,7 @@ const Home = ({ name, setName, fetchQuestion }) => {
           <TextField 
             className='category'
             select 
-            label='Wybierz kategorię'
+            label='Select a category'
             variant='outlined'
             onChange={(e) => setCategory(e.target.value)}
             value={category}
@@ -55,19 +55,19 @@ const Home = ({ name, setName, fetchQuestion }) => {
           <TextField
             className='level'
             select
-            label="Wybierz poziom trudności"
+            label="Select the difficulty level"
             variant='outlined'
             onChange={(e) => setDifficulty(e.target.value)}
             value={difficulty}
           >
             <MenuItem key="Easy" value="easy">
-              Łatwy
+              Easy
             </MenuItem>
             <MenuItem key="Medium" value="medium">
-              Średni
+              Medium
             </MenuItem>
             <MenuItem key="Hard" value="hard">
-              Trudny
+              Hard
             </MenuItem>
           </TextField>
           <Button 
@@ -76,7 +76,7 @@ const Home = ({ name, setName, fetchQuestion }) => {
             size='large'
             onClick={handleSubmit}
           >
-            Rozpocznij quiz
+            Start quiz
           </Button>
 
         </div>
